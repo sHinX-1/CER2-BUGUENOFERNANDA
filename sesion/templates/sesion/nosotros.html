@@ -1,0 +1,40 @@
+{% extends 'sesion/base.html' %}
+{% load static %}
+
+{% block titulo %} Sobre Nosotros {% endblock %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'sesion/css/nosotros.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+    <div class="card-body">
+        <h4 class="card-title"> Huellitas del Puerto: ¿Quienes somos? </h4> <br>
+        <p class="card-text">
+            La Fundación Huellas del Puerto es una organización sin fines de lucro de Valparaíso 
+            dedicada al rescate, rehabilitación y adopción responsable de perros y gatos en situación 
+            de abandono. <br><br>
+
+            Nuestra gran misión es que ningún peludito vuelva a quedar solo jamás. Nadie merece estar solo
+            y sin amor en un ambiente que no les hace vivir con tranquilidad, y por ello buscamos que tanto
+            nuestras queridas y queridos peluditos puedan tener un hogar al cual llegar y en donde puedan 
+            darles el amor que siempre han necesitado.
+        </p>
+    </div>
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-autoplay="true">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'sesion/img/callejero1.jpg' %}" class="d-block w-100 rounded-5">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'sesion/img/ninio1.png' %}" class="d-block w-100 rounded-5">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'sesion/img/ninio2.png' %}" class="d-block w-100 rounded-5">
+        </div>
+    </div>
+
+    </div>
+
+{% endblock %}

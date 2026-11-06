@@ -1,0 +1,38 @@
+{% extends 'sesion/base.html' %}
+{% load static %}
+
+{% block titulo %} Iniciar sesión {% endblock %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'sesion/css/cuenta.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="panel">
+    <h2> Iniciar sesión </h2> <br>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div>
+            <label for="id_username"> Nombre de usuario </label>
+            {{ form.username }}
+        </div>
+
+        <div>
+            <label for="id_password"> Contraseña </label>
+            {{ form.password }}
+        </div>
+
+        {% if form.errors %}
+            <p> Usuario o contraseña incorrectos. </p>
+        {% endif %}
+
+        <br>
+        <button type="submit" class="btn-solid theme-success botoncito"> Ingresar </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'sesion/base.html' %}
+{% load static %}
+
+{% block titulo %} Nuestros Peluditos {% endblock %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'sesion/css/mascotas.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="inicio-peluditos"> 
+    <img src="{%static 'sesion/img/peluditos1.png' %}">
+</div>
+
+<div class="filtro">
+    <div class="card card-subtle theme-success">
+        <h5 class="card-header"> Filtro </h5>
+    <div class="card-body">
+        <form method="GET">
+            <h4 class="card-title">Buscar por especie</h4>
+
+            <p class="card-text"> Selecciona la especie que deseas visualizar: </p>
+            <select name="especie" class="form-select mb-3">
+                 <option value="">Todas las mascotas</option>
+                    {% for especie in especies %}
+                        <option value="{{ especie.nombre }}"
+                            {% if especie_seleccionada == especie.nombre %}selected{% endif %}>
+                            {{ especie.nombre }}
+                        </option>
+                    {% endfor %}
+            </select>
+
+            <div class="btnes"> 
+                <button type="submit" class="btn-solid theme-primary"> Filtrar </button>
+                <a href="{% url 'mascotas' %}" class="btn-solid theme-primary"> Limpiar </a>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+
+<!-- TARJETAS DE ANIMALES -->
+<div class="row row-cols-1 md:row-cols-3 g-4">
+
+    {% for mascota in mascotas %}
+
+    <div class="col">
+        <div class="card h-100">
+
+            {% if mascota.imagen %}
+                <img src="{{ mascota.imagen }}" class="card-img-top" alt="{{ mascota.nombre }}">
+            {% endif %}
+
+            <div class="card-body text-center">
+                <h4 class="card-title">{{ mascota.nombre}}</h4>
+                <p class="card-text">
+                    {{ mascota.especie.nombre }} · {{ mascota.edad_aproximada }}
+                </p>
+
+                <div class="d-flex justify-content-center">
+                    <button class="btn-outline theme-info"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseMascota{{ mascota.pk }}">
+                        Ver detalles
+                    </button>
+                </div>
+
+                <div class="collapse mt-3" id="collapseMascota{{ mascota.pk }}">
+                    <div class="card card-body text-start">
+                        <p>
+                            <strong>Especie:</strong> {{ mascota.especie.nombre }}<br>
+                            <strong>Sexo:</strong> {{ mascota.sexo }}<br>
+                            <strong>Edad:</strong> {{ mascota.edad_aproximada }}<br>
+                            <strong>Descripción:</strong> {{ mascota.descripcion }}<br>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    {% empty %}
+        <p> Actualmente no hay mascotas registradas :( </p>
+    {% endfor %}
+
+</div>
+{% endblock %}

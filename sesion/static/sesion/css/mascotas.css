@@ -1,0 +1,30 @@
+body {
+    background-image: url("../img/fondo_sesion2.jpg");
+}
+
+.inicio-peluditos img{
+    width: 100%;
+    height: 100%;
+    margin-bottom:5%;
+}
+
+.filtro {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 5%;
+}
+
+.btnes {
+    margin-left: 12%;
+}
+
+.col {
+    margin-top: 5%;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}

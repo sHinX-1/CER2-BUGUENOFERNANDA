@@ -1,0 +1,27 @@
+{% extends 'sesion/base.html' %}
+{% load static %}
+
+{% block titulo %} Registrarse {% endblock %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'sesion/css/cuenta.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="panel">
+
+    <h2> Crear cuenta </h2><br>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit" class="btn-solid theme-success botoncito"> Registrarse </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+.navegacion {
+    background-color: rgba(80, 168, 87, 0.8);
+    min-height: 30px;
+    padding: 10px;
+    font-size: large;
+}
+
+.huellitas {
+    color: #000000 !important;
+    font-size: large;
+}
+
+.botoncitos {
+    background-color: rgba(110, 189, 116, 0.1);
+    color: black;
+}
+
+.boton {
+    color: #000000 !important;
+}
+
+
+.boton:hover {
+    color: #ffffff !important;
+}

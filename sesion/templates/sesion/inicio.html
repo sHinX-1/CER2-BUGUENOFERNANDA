@@ -1,0 +1,89 @@
+{% extends 'sesion/base.html' %}
+{% load static %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static 'sesion/css/inicio.css' %}">
+{% endblock %}
+
+{% block content %}
+        <!-- Carrusel de inicio -->    
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-autoplay="true">
+        <div class="carousel-inner">
+            <div class="carousel-item active borde">
+            <img src=" {% static 'sesion/img/1.png' %}" class="d-block w-100 rounded-5" alt="...">
+            </div>
+            <div class="carousel-item borde">
+            <img src="{% static 'sesion/img/2.png' %}" class="d-block w-100 rounded-5" alt="...">
+            </div>
+            <div class="carousel-item borde">
+            <img src="{% static 'sesion/img/3.png' %}" class="d-block w-100 rounded-5" alt="...">
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div>
+            <button class="btn-icon btn-sm carousel-control-play-pause" type="button" data-bs-target="#carouselExampleAutoplaying" aria-label="Pause" data-bs-pause-label="Pause" data-bs-play-label="Play">
+                <span class="carousel-icon-pause" aria-hidden="true"></span>
+                <span class="carousel-icon-play" aria-hidden="true"></span>
+            </button>
+            <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-icon-prev" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-icon-next" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+        </div>
+        </div> <br> <br>
+
+        <!-- Tarjetas -->
+        <div class="row row-cols-1 md:row-cols-3 g-3 justify-content-center columnas">
+            <div class="col">
+                <div class="card card-translucent" style="width: 18rem;">
+                <div class="card-header cabeceraT">
+                    Mascotas
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title"> ¿Quieres conocer a nuestros peluditos? </h4>
+                    <p class="card-text"> Ven y conoce a tu próximo mejor amigo de toda la vida </p>
+                    <img src="{% static 'sesion/img/foto1.jpg' %}"> <br>
+                    <a href="mascotas" class="btn-solid theme-primary"> Ir a galeria </a>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-translucent" style="width: 18rem;">
+                <div class="card-header cabeceraT">
+                    Sobre nosotros
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title"> ¿No sabes quienes somos? </h4>
+                    <p class="card-text"> Ven y conoce sobre nuestra misión como fundación </p>
+                    <img src="{% static 'sesion/img/foto2.jpg' %}"> <br>
+                    <a href="nosotros" class="btn-solid theme-primary"> Conócenos </a>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-translucent" style="width: 18rem;">
+                <div class="card-header cabeceraT">
+                    Mascota del d&iacute;a
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title"> Gogo </h4>
+                    <p class="card-text"> Por ser un ejemplo de supervivencia </p>
+                    <img src="{% static 'sesion/img/gugu.jpeg' %}"> <br>
+                </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"></script>
